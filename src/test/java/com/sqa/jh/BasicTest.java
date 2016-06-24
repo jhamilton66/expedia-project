@@ -25,24 +25,22 @@ public class BasicTest {
 		return driver;
 	}
 
-	@BeforeClass()
+	@BeforeClass(enabled = true)
 	public static void setupChrome() {
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(baseURL);
 	}
 
 	@BeforeClass(enabled = false)
 	public static void setupFirefox() {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.get(baseURL);
 	}
 
 	@AfterClass
 	public static void tearDown() {
-		driver.quit();
+		// driver.quit();
 	}
 
 	/**
@@ -57,6 +55,9 @@ public class BasicTest {
 	@BeforeMethod
 	public void setupTest() {
 		getDriver().manage().deleteAllCookies();
+		// Maximize window
+		getDriver().manage().window().maximize();
+		// Go to base URL
 		getDriver().get(getBaseURL());
 
 	}

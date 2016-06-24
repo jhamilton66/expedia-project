@@ -139,8 +139,8 @@ public class DataHelper {
 						rowData.add(cell.getBooleanCellValue());
 						break;
 					case Cell.CELL_TYPE_NUMERIC:
-						System.out.print((int) cell.getNumericCellValue() + "\t\t\t");
-						rowData.add((int) cell.getNumericCellValue());
+						System.out.print(cell.getNumericCellValue() + "\t\t\t");
+						rowData.add(cell.getNumericCellValue());
 						break;
 					case Cell.CELL_TYPE_STRING:
 						System.out.print(cell.getStringCellValue() + "\t\t\t");
