@@ -1,6 +1,6 @@
-# Automation Project 
+# Expedia Project 
 
-*Basic Automation Project Structure*
+*Expedia Automation Project*
 
 **Java 7**
 
